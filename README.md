@@ -1,10 +1,26 @@
+# Notes :
+
+## **_- I will use Arabic (RTL) as main language so every word used on site can be translated in a separate file and loaded accordingly_**
+
+## **_- The app must be PWA and can be installed from browser_**
+
+## **_- The app must support Server side rendering we have a very weak internet speed in our country_**
+
+## **_- Backend is Google Firebase/firestore/cloud functions/analytics and so on_**
+
+## **_- Frontend framework is Vue.js_**
+
+## **_- code must be optimized for firebase pricing without sacrificing functionality_**
+
+## **_- must be designed for future upgrades and adding new features must be without much difficulty_**
+
+## **_- the frontend should be optimized for RTL language and i could help in design (i have medium knowledge in css and vue) using templates provided_**
+
+## **_- further discussions, suggestions and requirements are helpful_**
+
 ## **Admin**
 
 - [I will provide you with this frontend template](https://pixinvent.com/demo/vuexy-html-bootstrap-admin-template/html/rtl/vertical-menu-template-bordered/)
-- CMS
-  - ordinary CMS features
-  - navigation structure [see example](https://demo.saleor.io/dashboard/navigation/TWVudTox)
-  - create additional pages and urls [see example](https://demo.saleor.io/dashboard/pages/add)
 - Live chat(vendors and buyers)
 - Account management
   - searchable/filterable list of users and their details
@@ -58,9 +74,9 @@
   - searchable/filterable list of orders
   - create/delete/update orders
   - orders with issues
-- (new)reviews and comments management
-  - can view every comment and review 
-  - delete reviews or comments 
+- reviews and comments management
+  - can view every comment and review
+  - delete reviews or comments
 - Discounts/Voucher/Coupon management
   - view list of active discount/voucher/coupon
   - pending discount/voucher/coupon
@@ -69,7 +85,7 @@
     - number of vendors
     - number of users registered
     - number of daily active users
-  - sales (can apply percentage to see net profit)
+  - sales and net profit
     - from auctions
     - according to product
     - according to city
@@ -78,7 +94,7 @@
 - Settings
   - pending setting:
     - manual or auto for any of (products/attributes/categories/vendors/auctions)
-  -
+    -
 
 ## **Account** (every registered account has) :
 
@@ -89,7 +105,7 @@
   - vendor
   - buyer
   - moderator
-- email (social login)
+- optional : email or (social login)
 - password
 
 ## **Vendor dashboard** (features for vendor experience) :
@@ -126,13 +142,13 @@
       - price
       - features
       - upgrade option
-    - (new) store sponsorship settings
+    - store sponsorship settings
       - tier
       - period
       - price
       - features
       - upgrade options
-    - (new) individual products sponsorship settings
+    - individual products sponsorship settings
       - can select any product and sponsor it with certain tier
       - tier
       - price
@@ -142,24 +158,23 @@
   - store phone number
   - social links
   - opening/closing times (for physical stores)
-  - shipping details
+  - delivery details
     - handled by app or by vendor (if by vendor):
-      - shipping company name
+      - delivery company name
       - rate per every city
 
-## **User**(features for User experience) :
+## **User** (features for User experience) :
 
 - [I will provide you with this frontend template](https://cartzilla.createx.studio/home-electronics-store.html)
 - pwa installable (offline support/save guest properties locally like address)
 - guest or sign up by number/social/email
 - main page lead to auction or marketplace pages
 - powerful search engine (algolia) autocomplete/autosuggestion/autocorrection
-- view items (inserted by vendor in USD) by both USD and IQD
 - vendor page has rating/reviews/comment/number of followers/number of sales/products
 - product page has rating/reviews/comment/number of sales/all properties/images/videos/360view/link to share products to social networks
 - layered navigation/breadcrumbs/sitemap
-- live chat with vendor/admin (cost of your setup vs third part integration)
-- auction products page has (in addition to regular properties)/NO. of views/history of bids/user can set bid amount & submit bid
+- live chat with vendor/admin (from scratch or using a plugin)
+- auction products page has (in addition to regular product properties)/NO. of views/history of bids/user can set bid amount & submit bid
 - user can follow auctions until they end
 - user can follow vendors and like them
 - user can follow category/subcategory
@@ -168,13 +183,13 @@
 - can checkout as registered user/guest (guest checkout requires number and address only)
 - can view related products
 
-## **Product** (every product has these properties) :
+## **Product** (every product has these properties) : filled by admin or vendor :
 
 - title
 - description
 - vendor
+- price
 - country of origin
-- currency (two currencies only => USD/IQD)
 - address (same as vendor or else (google map location))
 - attributes
 - category
@@ -193,18 +208,15 @@
   - multiple images
   - video
   - 360 view
-  - pdf (like a brochure)
-- bundle or not
-  - other products in bundle
-  - bundle price
 - specifications/technical details
-- sponsored or not/sponsering budget (to be featured in home page and search results according to amount)
+- sponsored or not
+- sponsoring tier (to be featured in home page and search results according to tier chosen)
 - warranty
-- available for purchase
 - return policy
 - number of sales
+- ///////////////////
 - state (pending or published after approval by admin)
-- (can add future properties through admin dashboard)
+- available or not for purchase (can be set on product listing page in vendor dashboard)
 
 ## **Attribute** (every attribute has these properties) :
 
@@ -226,24 +238,25 @@
 
 - date
 - username (auto for registered/manual for guest)
-- user phone number (guest or registered)
-- user address (google map)
+- user phone number (auto for registered/manual for guest)
+- user address
+  - city (from dropdown)
+  - (gps coordinates)
 - vendor name
-- vendor address (google map)
+- vendor address (gps coordinates)
 - products and quantity
-- shipping details
+- delivery details
   - company
   - rate
-- price without shipping
-- total price with shipping
-- status
-  - received by shipping company
+- price without delivery
+- total price with delivery
+- status (can be changed by delivery company)
+  - received by delivery company
   - pending delivery
   - delivered
   - canceled
 
 ## **Auction** (every auction has these properties) :
-
 
 - product (ordinary details in addition to) :
 - starting price
@@ -256,37 +269,12 @@
 - NO. of bidders
 - (after auction ends the product page shows only the views/winning bid/end date)
 
-(new)
+## **delivery**
 
-
-## **Shipping** 
-- the shipping is handled outside the platform
-- the shipping company we will deal with can log in into separate portal in which they will view the orders (which are not handled by vendors own company ) and can change their status like delivered and canceled and so on
-- the account which the shipping company will use will be given the role of shipping company (in the roles and permission in the admin section) and the related permissions to view and edit orders
-
+- the delivery is handled outside the platform
+- the delivery company we will deal with can log in into separate page in which they will view the orders (which are not handled by vendors own company ) and can change their status like delivered and canceled and so on
+- the account which the delivery company will use will be given the role of delivery company (in the roles and permission in the admin section) and the related permissions to view and edit orders
 
 ---
 
 ---
-
-# Notes :
-
-## **_- I will use Arabic (RTL) as main language so every word used on site can be translated in a separate file and loaded accordingly_**
-
-## **_- The app must be PWA and can be installed from browser_**
-
-## **_- The app must support Server side rendering_**
-
-## **_- Backend is Google Firebase_**
-
-## **_- Frontend framework is Vue.js_**
-
-## **_- code must be optimized for firebase pricing without sacrificing functionality_**
-
-## **_- must be designed for future upgrades and adding new features must be without much difficulty_**
-
-## **_- this project is one of 7 projects, our company seeks turning them to separate web apps and we need them to be in the same look and feel and more importantly the user can login into any one of them with same credentials ( we also have job board , real estate agency and pharmacy marketplace among other projects in process )_**
-
-## **_- the frontend should be optimized for RTL language and every page in the web app should be reviewed for design and RTL integrity _**
-
-## **_- further discussions, suggestions and requirements are accepted_**
