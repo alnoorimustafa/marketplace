@@ -4,9 +4,9 @@
 
 ## **_- The app must be PWA and can be installed from browser_**
 
-## **_- The app must support Server side rendering we have a very weak internet speed in our country_**
+## **_- we have a very weak internet speed in our country SO using Server side rendering or similar solution  _**
 
-## **_- Backend is Google Firebase/firestore/cloud functions/analytics and so on_**
+## **_- Backend is Google Firebase/firestore/cloud functions/analytics , what is your database suggestion ? _**
 
 ## **_- Frontend framework is Vue.js_**
 
